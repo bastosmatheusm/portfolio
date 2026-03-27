@@ -276,6 +276,7 @@ header a:hover {
 
 .about-image {
     flex: 0 0 17.5rem;
+    max-width: 100%;
 }
 
 .about-image img {
@@ -632,12 +633,33 @@ footer {
 /* Responsividade - Tablet */
 
 @media screen and (max-width: 1024px){
-  
+  .hero-container {
+    gap: var(--spacing-lg);
+  }
+
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    padding: var(--spacing-md);
+  }
+
+  .about-image {
+    flex: 0 0 auto;
+  }
+
+  .about-buttons-data {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Responsividade - Celular */
 
-@media screen and (max-width: 480px){
+@media screen and (max-width: 768px){
     
   .section-container{
     padding: var(--spacing-md) var(--spacing-sm);
