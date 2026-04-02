@@ -24,6 +24,14 @@
 
     <link rel="icon" type="image/svg+xml" href="./assets/img/favicon.svg" />
 
+    <!-- SWIPER CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!-- CSS principal da página -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <!-- CSS principal da página -->
     <link rel="stylesheet" href="./assets/css/style.css" />
 
@@ -42,7 +50,7 @@
             <li><a href="#hero">Início</a></li>
             <li><a href="#about">Sobre</a></li>
             <li><a href="#projects">Projetos</a></li>
-            <li><a href="#contact">Contatos</a></li>
+            <li><a href="#contact">Contato</a></li>
           </ul>
         </nav>
       </div>
@@ -90,16 +98,15 @@
         <article class="about-content">
           <h2>Sobre mim</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus
-            minus perspiciatis reprehenderit error voluptatibus labore assumenda
-            doloremque quibusdam sequi? Distinctio autem sed laudantium nostrum
-            reprehenderit eligendi animi adipisci a neque.
-          </p>
-          <p>
-            Mussum Ipsum, cacilds vidis litro abertis. Per aumento de cachacis,
-            eu reclamis. Suco de cevadiss deixa as pessoas mais interessantis.
-            Quem manda na minha terra sou euzis! Quem num gosta di mé, boa
-            gentis num é.
+            Sou Desenvolvedor Fullstack com foco em Java, JavaScript e
+            TypeScript, construindo aplicações web completas do back-end ao
+            front-end. Trabalho com Spring Boot, NestJS e React, desenvolvendo
+            APIs, integrações e interfaces modernas, sempre buscando eficiência
+            e organização no código. Tenho interesse em arquitetura de sistemas,
+            escalabilidade e boas práticas de desenvolvimento, evoluindo
+            constantemente através de projetos práticos. Minha transição para a
+            área de tecnologia vem da busca por desafios mais complexos e pela
+            vontade de criar soluções que impactem pessoas e negócios.
           </p>
 
           <!-- Links (GitHub + Curriculo) e Dados do GitHub -->
@@ -221,7 +228,22 @@
         </article>
 
         <!-- Formulário de Contato -->
-        <form id="formulario">
+        <form
+          id="formulario"
+          action="https://api.web3forms.com/submit"
+          method="POST"
+        >
+          <input
+            type="hidden"
+            name="access_key"
+            value="9ca1c214-f171-4909-992e-8795c42c2680"
+          />
+          <input
+            type="hidden"
+            name="_next"
+            value="http://localhost:5500/success.html"
+          />
+
           <label for="nome">Nome</label>
           <input
             id="nome"
@@ -264,5 +286,11 @@
 
     <!-- Rodapé da página -->
     <footer>Desenvolvido por Matheus Bastos - 2026</footer>
+
+    <!-- SWIPER JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Script JavaScript principal da página -->
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
