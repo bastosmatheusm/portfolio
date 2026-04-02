@@ -321,9 +321,9 @@ formulario.addEventListener('submit', function (event) {
 			}
 		})
 	}
+})
+// executar a função getAboutGitHub
+getAboutGitHub()
 
-	// executar a função getAboutGitHub
-	getAboutGitHub()
-
-	// Executar a função getProjects GitHub
-	getProjectsGitHub()
+// Executar a função getProjects GitHub
+getProjectsGitHub()
