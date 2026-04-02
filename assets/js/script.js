@@ -36,18 +36,15 @@ async function getAboutGitHub() {
       <article class="about-content">
 
         <h2>Sobre mim</h2>
-        <p>Lorem ipsum dolor sit amet consectetur, 
-          adipisicing elit. Natus minus perspiciatis 
-          reprehenderit error voluptatibus labore 
-          assumenda doloremque quibusdam sequi? 
-          Distinctio autem sed laudantium nostrum 
-          reprehenderit eligendi animi adipisci 
-          a neque.</p>
-        <p>Mussum Ipsum, cacilds vidis litro abertis. 
-          Per aumento de cachacis, eu reclamis. 
-          Suco de cevadiss deixa as pessoas mais interessantis. 
-          Quem manda na minha terra sou euzis! 
-          Quem num gosta di mé, boa gentis num é.</p>
+        <p>Sou Desenvolvedor Fullstack com foco em Java, JavaScript e
+            TypeScript, construindo aplicações web completas do back-end ao
+            front-end. Trabalho com Spring Boot, NestJS e React, desenvolvendo
+            APIs, integrações e interfaces modernas, sempre buscando eficiência
+            e organização no código. Tenho interesse em arquitetura de sistemas,
+            escalabilidade e boas práticas de desenvolvimento, evoluindo
+            constantemente através de projetos práticos. Minha transição para a
+            área de tecnologia vem da busca por desafios mais complexos e pela
+            vontade de criar soluções que impactem pessoas e negócios.</p>
 
         <!-- Links (GitHub + Curriculo) e Dados do GitHub -->
         <div class="about-buttons-data">
