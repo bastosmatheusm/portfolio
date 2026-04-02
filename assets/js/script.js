@@ -114,48 +114,48 @@ async function getProjectsGitHub() {
 		}
 
 		repositorios.forEach((repositorio) => {
-			
-      // Seleciona o nome da Linguagem padrão do repositório
-      const linguagem = repositorio.language || 'GitHub'
-			
-      // Seleciona o ícone da Linguagem padrão do repositório
-      const icone = linguagens[linguagem] ?? linguagens['GitHub']
-			
-      // Constrói a URL que aponta para o ícone da Linguagem padrão do repositório
-      const urlIcone = `./assets/icons/languages/${icone}.svg`
+
+			// Seleciona o nome da Linguagem padrão do repositório
+			const linguagem = repositorio.language || 'GitHub'
+
+			// Seleciona o ícone da Linguagem padrão do repositório
+			const icone = linguagens[linguagem] ?? linguagens['GitHub']
+
+			// Constrói a URL que aponta para o ícone da Linguagem padrão do repositório
+			const urlIcone = `./assets/icons/languages/${icone}.svg`
 
 			// Formata o Nome do Repositório
 			const nomeFormatado = repositorio.name
 				.replace(/[-_]/g, ' ') // Substitui hifens e underlines por espaços em branco
 				.replace(/[^a-zA-Z0-9\s]/g, '') // Remove Caracteres especiais
-        .replace(/\s+t[a-z0-9]+$/i, '') // Remove a identificação de turma
+				.replace(/\s+t[a-z0-9]+$/i, '') // Remove a identificação de turma
 				.toUpperCase() // Converte a string em letras maiúsculas
 
 			// Função para truncar texto
-      // Se a descrição possuir mais de 100 carcateres
-      // seleciona os primeiros 97 e acrescenta '...' no final
-      // Senão retorna o mesmo texto
+			// Se a descrição possuir mais de 100 carcateres
+			// seleciona os primeiros 97 e acrescenta '...' no final
+			// Senão retorna o mesmo texto
 			const truncar = (texto, limite) => texto.length > limite
-        ? texto.substring(0, limite) + '...'
-        : texto
+				? texto.substring(0, limite) + '...'
+				: texto
 
-      // Define a descrição do Repositório
-      const descricao = repositorio.description
-        ? truncar(repositorio.description, 100)
-        : 'Projeto desenvolvido no GitHub'
+			// Define a descrição do Repositório
+			const descricao = repositorio.description
+				? truncar(repositorio.description, 100)
+				: 'Projeto desenvolvido no GitHub'
 
 			// tags
-      const tags = repositorio.topics?.length > 0
-        ? repositorio.topics.slice(0, 3).map(topic => `<span class="tag">${topic}</span>`).join('')
-        : `<span class="tag">${linguagem}</span>`;
+			const tags = repositorio.topics?.length > 0
+				? repositorio.topics.slice(0, 3).map(topic => `<span class="tag">${topic}</span>`).join('')
+				: `<span class="tag">${linguagem}</span>`;
 
-      // Cria o Botão Deploy
-      const botaoDeploy = repositorio.homepage
-        ? `<a href="${repositorio.homepage}" target="_blank" class="botao-outline botao-sm">Deploy</a>`
-        : ''
+			// Cria o Botão Deploy
+			const botaoDeploy = repositorio.homepage
+				? `<a href="${repositorio.homepage}" target="_blank" class="botao-outline botao-sm">Deploy</a>`
+				: ''
 
-      // Botões de ação
-      const botoesAcao = `
+			// Botões de ação
+			const botoesAcao = `
         <div class="project-buttons">
           <a href="${repositorio.html_url}" target="_blank" class="botao botao-sm">
             GitHub
@@ -304,19 +304,26 @@ formulario.addEventListener('submit', function (event) {
 		isValid = false
 	}
 
+	// Depois
 	if (isValid) {
-		const submitButton = formulario.querySelector(
-			'button[type="submit"]',
-		)
+		const submitButton = formulario.querySelector('button[type="submit"]')
 		submitButton.disabled = true
 		submitButton.textContent = 'Enviando...'
 
-		formulario.submit()
+		const formData = new FormData(formulario)
+
+		fetch('https://api.web3forms.com/submit', {
+			method: 'POST',
+			body: formData
+		}).then((response) => {
+			if (response.ok) {
+				window.location.href = 'https://bastosmatheusm.github.io/portfolio/success.html'
+			}
+		})
 	}
-})
 
-// executar a função getAboutGitHub
-getAboutGitHub()
+	// executar a função getAboutGitHub
+	getAboutGitHub()
 
-// Executar a função getProjects GitHub
-getProjectsGitHub()
+	// Executar a função getProjects GitHub
+	getProjectsGitHub()
